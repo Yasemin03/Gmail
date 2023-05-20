@@ -1,0 +1,1767 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gmail</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <nav class="header">
+      <div class="left">
+        <div class="toggleBtn">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+        <div class="logo">
+          <img src="assets/gmaillogo.png" style="cursor: pointer" />
+        </div>
+      </div>
+      <div class="middle">
+        <div class="searchBx">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <i class="fa-solid fa-sliders"></i>
+          <input
+            type="text"
+            name="search"
+            class="serach"
+            placeholder="Search Mail"
+          />
+        </div>
+      </div>
+      <div class="right">
+        <div class="option">
+          <i class="fa-solid fa-question"></i>
+          <i class="fa-solid fa-gear" id="settingsicon"></i>
+          <i class="fa-solid fa-border-all" id="gappsicon"></i>
+          <div class="user" title="user@gmail.com">
+            <img src="assets/userlogo.jfif" />
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="sidebarright" id="sidebarright">
+      <div class="quick-settings">
+        <div class="quick-settings-header">
+          Quick settings
+          <button class="close-btn" id="closebtn" aria-label="Close"></button>
+        </div>
+        <button class="see-all-btn" aria-label="See all settings">
+          See all settings
+        </button>
+      </div>
+
+      <div class="app-settings">
+        <div class="app-settings-header">Apps in Gmail</div>
+        <div class="app-item">
+          <div class="app-name">Chat and Meet</div>
+
+          <button class="customize-btn">Customize</button>
+        </div>
+        <img src="assets/nav_promo.png" style="margin-left: 10px" />
+      </div>
+
+      <div class="display-settings">
+        <div class="display-settings-header">Density</div>
+        <label class="density-option">
+          <input
+            type="radio"
+            name="density"
+            class="density-radio"
+            data-density-type="0"
+            checked
+          />
+          <div class="density-text">Default</div>
+          <img
+            src="assets/default.png"
+            style="
+              font-family: Google Sans, Roboto, RobotoDraft, Helvetica, Arial,
+                sans-serif;
+              color: #202124;
+              height: 32px;
+              margin-left: auto;
+              width: 72px;
+              overflow-clip-margin: content-box;
+              overflow: clip;
+            "
+          />
+        </label>
+        <label class="density-option">
+          <input
+            type="radio"
+            name="density"
+            class="density-radio"
+            data-density-type="1"
+          />
+          <div class="density-text">Comfortable</div>
+          <img
+            src="assets/comfortable.png"
+            style="
+              font-family: Google Sans, Roboto, RobotoDraft, Helvetica, Arial,
+                sans-serif;
+              color: #202124;
+              height: 32px;
+              margin-left: auto;
+              width: 72px;
+            "
+          />
+        </label>
+        <label class="density-option">
+          <input
+            type="radio"
+            name="density"
+            class="density-radio"
+            data-density-type="2"
+          />
+          <div class="density-text">Compact</div>
+          <img
+            src="assets/compact.png"
+            style="
+              font-family: Google Sans, Roboto, RobotoDraft, Helvetica, Arial,
+                sans-serif;
+              color: #202124;
+              height: 32px;
+              margin-left: auto;
+              width: 72px;
+            "
+          />
+        </label>
+      </div>
+
+      <div class="theme-settings">
+        <div class="theme-settings-header">
+          Theme
+          <button class="view-all-btn" aria-label="View all">View all</button>
+        </div>
+        <div class="theme-item">
+          <img
+            data-themetype="basicwhite"
+            aria-label="Default theme"
+            name="Default"
+            src="assets/theme.png"
+            alt="Default"
+            data-is-custom-theme="false"
+            data-theme-id="basicwhite"
+            tabindex="0"
+            role="button"
+            class="theme-preview"
+          />
+        </div>
+      </div>
+
+      <div class="inbox-settings">
+        <div class="inbox-settings-header">Inbox type</div>
+        <label class="inbox-option">
+          <input
+            type="radio"
+            name="inbox-type"
+            class="inbox-radio"
+            data-id="1"
+            checked="checked"
+          />
+          <span class="inbox-label">Default</span>
+          <img
+            src="assets/Classic.png"
+            style="
+              font-family: Google Sans, Roboto, RobotoDraft, Helvetica, Arial,
+                sans-serif;
+              color: #202124;
+              height: 32px;
+              margin-left: auto;
+              width: 72px;
+              overflow-clip-margin: content-box;
+              overflow: clip;
+            "
+          />
+        </label>
+        <label class="inbox-option">
+          <input
+            type="radio"
+            name="inbox-type"
+            class="inbox-radio"
+            data-id="2"
+          />
+
+          <span class="inbox-label">Important First</span>
+          <img
+            src="assets/Importantfirst.png"
+            style="
+              font-family: Google Sans, Roboto, RobotoDraft, Helvetica, Arial,
+                sans-serif;
+              color: #202124;
+              height: 32px;
+              margin-left: auto;
+              width: 72px;
+              overflow-clip-margin: content-box;
+              overflow: clip;
+            "
+          />
+        </label>
+        <label class="inbox-option">
+          <input
+            type="radio"
+            name="inbox-type"
+            class="inbox-radio"
+            data-id="3"
+          />
+          <span class="inbox-label">Unread First</span>
+          <img
+            src="assets/Unreadfirst.png"
+            style="
+              font-family: Google Sans, Roboto, RobotoDraft, Helvetica, Arial,
+                sans-serif;
+              color: #202124;
+              height: 32px;
+              margin-left: auto;
+              width: 72px;
+              overflow-clip-margin: content-box;
+              overflow: clip;
+            "
+          />
+        </label>
+        <label class="inbox-option">
+          <input
+            type="radio"
+            name="inbox-type"
+            class="inbox-radio"
+            data-id="4"
+          />
+          <span class="inbox-label">Starred First</span>
+          <img
+            src="assets/Starredfirst.png"
+            style="
+              font-family: Google Sans, Roboto, RobotoDraft, Helvetica, Arial,
+                sans-serif;
+              color: #202124;
+              height: 32px;
+              margin-left: auto;
+              width: 72px;
+              overflow-clip-margin: content-box;
+              overflow: clip;
+            "
+          />
+        </label>
+      </div>
+    </div>
+
+    <div class="sideBar">
+      <div class="newmail">
+        <i class="fa-solid fa-pencil"></i>
+        <span>Compose</span>
+      </div>
+      <ul class="menu">
+        <li class="active">
+          <div class="icon">
+            <i class="fa-solid fa-inbox"></i>
+          </div>
+          <span>Inbox</span>
+        </li>
+        <li>
+          <div class="icon">
+            <i class="fa-regular fa-star"></i>
+          </div>
+          <span>Starred</span>
+        </li>
+        <li>
+          <div class="icon">
+            <i class="fa-regular fa-clock"></i>
+          </div>
+          <span>Snooze</span>
+        </li>
+        <li>
+          <div class="icon">
+            <i class="fa-solid fa-paper-plane"></i>
+          </div>
+          <span>Sent</span>
+        </li>
+        <li>
+          <div class="icon">
+            <i class="fa-solid fa-note-sticky"></i>
+          </div>
+          <span>Draft</span>
+        </li>
+        <li>
+          <div class="icon">
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <span>More</span>
+        </li>
+        <li class="last">
+          <div class="icon">
+            <i class="fa-solid fa-plus"></i>
+          </div>
+          <span>More</span>
+        </li>
+      </ul>
+    </div>
+    <div class="mails">
+      <div class="top">
+        <div class="left">
+          <div class="select">
+            <input type="checkbox" name="" class="mainSelect" />
+            <i class="fa-solid fa-caret-down"></i>
+          </div>
+          <div class="other">
+            <i class="fa-solid fa-rotate-right"></i>
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+          </div>
+        </div>
+        <div class="right">
+          <div class="show">1-50 of 2,024</div>
+          <i title="previouse 50" class="fa-solid fa-chevron-left"></i>
+          <i title="Next 50" class="fa-solid fa-chevron-right"></i>
+          <i title="Input method" class="fa-solid fa-keyboard"></i>
+        </div>
+      </div>
+      <div class="tabs">
+        <div class="tab active" onclick="changeTab(0)">
+          <div class="icon">
+            <i class="fa-solid fa-inbox"></i>
+          </div>
+          <div class="tital">Primary</div>
+        </div>
+        <div class="tab" onclick="changeTab(1)">
+          <div class="icon">
+            <i class="fa-solid fa-tag"></i>
+          </div>
+          <div class="tital">Promotions</div>
+        </div>
+        <div class="tab" onclick="changeTab(2)">
+          <div class="icon">
+            <i class="fa-solid fa-user-group"></i>
+          </div>
+          <div class="tital">Social</div>
+        </div>
+      </div>
+      <div class="mail">
+        <ul class="list">
+          <li >
+            <input type="checkbox" name="" class="select" />
+            <div class="star">
+              <input type="checkbox" name="" class="stared" />
+              <i class="fa-regular fa-star"></i>
+            </div>
+            <div class="sender">Etsy</div>
+            <div class="msg">
+              <span>Lorem ipsum dolor - </span>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod
+            </div>
+            <div class="time">6:35 PM</div>
+            <div class="option">
+              <div class="icon" title="Archive">
+                <i class="fa-solid fa-box-archive"></i>
+              </div>
+              <div class="icon" title="Delete" onclick="deleteListItem(this)">
+                <i class="fa-solid fa-trash"></i>
+              </div>
+              <div class="icon" title="Mark as read">
+                <i class="fa-regular fa-envelope"></i>
+              </div>
+              <div class="icon" title="Snooz">
+                <i class="fa-regular fa-clock"></i>
+              </div>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" name="" class="select" />
+            <div class="star">
+              <input type="checkbox" name="" class="stared" />
+              <i class="fa-regular fa-star"></i>
+            </div>
+            <div class="sender">Etsy</div>
+            <div class="msg">
+              <span>Lorem ipsum dolor - </span>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod
+            </div>
+            <div class="time">6:35 PM</div>
+            <div class="option">
+              <div class="icon" title="Archive">
+                <i class="fa-solid fa-box-archive"></i>
+              </div>
+              <div class="icon" title="Delete" onclick="deleteListItem(this)">
+                <i class="fa-solid fa-trash"></i>
+              </div>
+              <div class="icon" title="Mark as read">
+                <i class="fa-regular fa-envelope"></i>
+              </div>
+              <div class="icon" title="Snooz">
+                <i class="fa-regular fa-clock"></i>
+              </div>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" name="" class="select" />
+            <div class="star">
+              <input type="checkbox" name="" class="stared" />
+              <i class="fa-regular fa-star"></i>
+            </div>
+            <div class="sender">Etsy</div>
+            <div class="msg">
+              <span>Lorem ipsum dolor - </span>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod
+            </div>
+            <div class="time">6:35 PM</div>
+            <div class="option">
+              <div class="icon" title="Archive">
+                <i class="fa-solid fa-box-archive"></i>
+              </div>
+              <div class="icon" title="Delete" onclick="deleteListItem(this)">
+                <i class="fa-solid fa-trash"></i>
+              </div>
+              <div class="icon" title="Mark as read">
+                <i class="fa-regular fa-envelope"></i>
+              </div>
+              <div class="icon" title="Snooz">
+                <i class="fa-regular fa-clock"></i>
+              </div>
+            </div>
+          </li>
+          <li class="read">
+            <input type="checkbox" name="" class="select" />
+            <div class="star">
+              <input type="checkbox" name="" class="stared" />
+              <i class="fa-regular fa-star"></i>
+            </div>
+            <div class="sender">Etsy</div>
+            <div class="msg">
+              <span>Lorem ipsum dolor - </span>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod
+            </div>
+            <div class="time">6:35 PM</div>
+            <div class="option">
+              <div class="icon" title="Archive">
+                <i class="fa-solid fa-box-archive"></i>
+              </div>
+              <div class="icon" title="Delete" onclick="deleteListItem(this)">
+                <i class="fa-solid fa-trash"></i>
+              </div>
+              <div class="icon" title="Mark as read">
+                <i class="fa-regular fa-envelope"></i>
+              </div>
+              <div class="icon" title="Snooz">
+                <i class="fa-regular fa-clock"></i>
+              </div>
+            </div>
+          </li>
+          <li class="read">
+            <input type="checkbox" name="" class="select" />
+            <div class="star">
+              <input type="checkbox" name="" class="stared" />
+              <i class="fa-regular fa-star"></i>
+            </div>
+            <div class="sender">Etsy</div>
+            <div class="msg">
+              <span>Lorem ipsum dolor - </span>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod
+            </div>
+            <div class="time">6:35 PM</div>
+            <div class="option">
+              <div class="icon" title="Archive">
+                <i class="fa-solid fa-box-archive"></i>
+              </div>
+              <div class="icon" title="Delete" onclick="deleteListItem(this)">
+                <i class="fa-solid fa-trash"></i>
+              </div>
+              <div class="icon" title="Mark as read">
+                <i class="fa-regular fa-envelope"></i>
+              </div>
+              <div class="icon" title="Snooz">
+                <i class="fa-regular fa-clock"></i>
+              </div>
+            </div>
+          </li>
+          <li class="read">
+            <input type="checkbox" name="" class="select" />
+            <div class="star">
+              <input type="checkbox" name="" class="stared" />
+              <i class="fa-regular fa-star"></i>
+            </div>
+            <div class="sender">Etsy</div>
+            <div class="msg">
+              <span>Lorem ipsum dolor - </span>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod
+            </div>
+            <div class="time">6:35 PM</div>
+            <div class="option">
+              <div class="icon" title="Archive">
+                <i class="fa-solid fa-box-archive"></i>
+              </div>
+              <div class="icon" title="Delete" onclick="deleteListItem(this)">
+                <i class="fa-solid fa-trash"></i>
+              </div>
+              <div class="icon" title="Mark as read">
+                <i class="fa-regular fa-envelope"></i>
+              </div>
+              <div class="icon" title="Snooz">
+                <i class="fa-regular fa-clock"></i>
+              </div>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" name="" class="select" />
+            <div class="star">
+              <input type="checkbox" name="" class="stared" />
+              <i class="fa-regular fa-star"></i>
+            </div>
+            <div class="sender">Etsy</div>
+            <div class="msg">
+              <span>Lorem ipsum dolor - </span>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod
+            </div>
+            <div class="time">6:35 PM</div>
+            <div class="option">
+              <div class="icon" title="Archive">
+                <i class="fa-solid fa-box-archive"></i>
+              </div>
+              <div class="icon" title="Delete" onclick="deleteListItem(this)">
+                <i class="fa-solid fa-trash"></i>
+              </div>
+              <div class="icon" title="Mark as read">
+                <i class="fa-regular fa-envelope"></i>
+              </div>
+              <div class="icon" title="Snooz">
+                <i class="fa-regular fa-clock"></i>
+              </div>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" name="" class="select" />
+            <div class="star">
+              <input type="checkbox" name="" class="stared" />
+              <i class="fa-regular fa-star"></i>
+            </div>
+            <div class="sender">Etsy</div>
+            <div class="msg">
+              <span>Lorem ipsum dolor - </span>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod
+            </div>
+            <div class="time">6:35 PM</div>
+            <div class="option">
+              <div class="icon" title="Archive">
+                <i class="fa-solid fa-box-archive"></i>
+              </div>
+              <div class="icon" title="Delete" onclick="deleteListItem(this)">
+                <i class="fa-solid fa-trash"></i>
+              </div>
+              <div class="icon" title="Mark as read">
+                <i class="fa-regular fa-envelope"></i>
+              </div>
+              <div class="icon" title="Snooz">
+                <i class="fa-regular fa-clock"></i>
+              </div>
+            </div>
+          </li>
+          <li class="read">
+            <input type="checkbox" name="" class="select" />
+            <div class="star">
+              <input type="checkbox" name="" class="stared" />
+              <i class="fa-regular fa-star"></i>
+            </div>
+            <div class="sender">Etsy</div>
+            <div class="msg">
+              <span>Lorem ipsum dolor - </span>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod
+            </div>
+            <div class="time">6:35 PM</div>
+            <div class="option">
+              <div class="icon" title="Archive">
+                <i class="fa-solid fa-box-archive"></i>
+              </div>
+              <div class="icon" title="Delete" onclick="deleteListItem(this)">
+                <i class="fa-solid fa-trash"></i>
+              </div>
+              <div class="icon" title="Mark as read">
+                <i class="fa-regular fa-envelope"></i>
+              </div>
+              <div class="icon" title="Snooz">
+                <i class="fa-regular fa-clock"></i>
+              </div>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" name="" class="select" />
+            <div class="star">
+              <input type="checkbox" name="" class="stared" />
+              <i class="fa-regular fa-star"></i>
+            </div>
+            <div class="sender">Etsy</div>
+            <div class="msg">
+              <span>Lorem ipsum dolor - </span>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod
+            </div>
+            <div class="time">6:35 PM</div>
+            <div class="option">
+              <div class="icon" title="Archive">
+                <i class="fa-solid fa-box-archive"></i>
+              </div>
+              <div class="icon" title="Delete" onclick="deleteListItem(this)">
+                <i class="fa-solid fa-trash"></i>
+              </div>
+              <div class="icon" title="Mark as read">
+                <i class="fa-regular fa-envelope"></i>
+              </div>
+              <div class="icon" title="Snooz">
+                <i class="fa-regular fa-clock"></i>
+              </div>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" name="" class="select" />
+            <div class="star">
+              <input type="checkbox" name="" class="stared" />
+              <i class="fa-regular fa-star"></i>
+            </div>
+            <div class="sender">Etsy</div>
+            <div class="msg">
+              <span>Lorem ipsum dolor - </span>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod
+            </div>
+            <div class="time">6:35 PM</div>
+            <div class="option">
+              <div class="icon" title="Archive">
+                <i class="fa-solid fa-box-archive"></i>
+              </div>
+              <div class="icon" title="Delete" onclick="deleteListItem(this)">
+                <i class="fa-solid fa-trash"></i>
+              </div>
+              <div class="icon" title="Mark as read">
+                <i class="fa-regular fa-envelope"></i>
+              </div>
+              <div class="icon" title="Snooz">
+                <i class="fa-regular fa-clock"></i>
+              </div>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" name="" class="select" />
+            <div class="star">
+              <input type="checkbox" name="" class="stared" />
+              <i class="fa-regular fa-star"></i>
+            </div>
+            <div class="sender">Etsy</div>
+            <div class="msg">
+              <span>Lorem ipsum dolor - </span>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod
+            </div>
+            <div class="time">6:35 PM</div>
+            <div class="option">
+              <div class="icon" title="Archive">
+                <i class="fa-solid fa-box-archive"></i>
+              </div>
+              <div class="icon" title="Delete" onclick="deleteListItem(this)">
+                <i class="fa-solid fa-trash"></i>
+              </div>
+              <div class="icon" title="Mark as read">
+                <i class="fa-regular fa-envelope"></i>
+              </div>
+              <div class="icon" title="Snooz">
+                <i class="fa-regular fa-clock"></i>
+              </div>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" name="" class="select" />
+            <div class="star">
+              <input type="checkbox" name="" class="stared" />
+              <i class="fa-regular fa-star"></i>
+            </div>
+            <div class="sender">Etsy</div>
+            <div class="msg">
+              <span>Lorem ipsum dolor - </span>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod
+            </div>
+            <div class="time">6:35 PM</div>
+            <div class="option">
+              <div class="icon" title="Archive">
+                <i class="fa-solid fa-box-archive"></i>
+              </div>
+              <div class="icon" title="Delete" onclick="deleteListItem(this)">
+                <i class="fa-solid fa-trash"></i>
+              </div>
+              <div class="icon" title="Mark as read">
+                <i class="fa-regular fa-envelope"></i>
+              </div>
+              <div class="icon" title="Snooz">
+                <i class="fa-regular fa-clock"></i>
+              </div>
+            </div>
+          </li>
+          <li class="read">
+            <input type="checkbox" name="" class="select" />
+            <div class="star">
+              <input type="checkbox" name="" class="stared" />
+              <i class="fa-regular fa-star"></i>
+            </div>
+            <div class="sender">Etsy</div>
+            <div class="msg">
+              <span>Lorem ipsum dolor - </span>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod
+            </div>
+            <div class="time">6:35 PM</div>
+            <div class="option">
+              <div class="icon" title="Archive">
+                <i class="fa-solid fa-box-archive"></i>
+              </div>
+              <div class="icon" title="Delete" onclick="deleteListItem(this)">
+                <i class="fa-solid fa-trash"></i>
+              </div>
+              <div class="icon" title="Mark as read">
+                <i class="fa-regular fa-envelope"></i>
+              </div>
+              <div class="icon" title="Snooz">
+                <i class="fa-regular fa-clock"></i>
+              </div>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" name="" class="select" />
+            <div class="star">
+              <input type="checkbox" name="" class="stared" />
+              <i class="fa-regular fa-star"></i>
+            </div>
+            <div class="sender">Etsy</div>
+            <div class="msg">
+              <span>Lorem ipsum dolor - </span>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod
+            </div>
+            <div class="time">6:35 PM</div>
+            <div class="option">
+              <div class="icon" title="Archive">
+                <i class="fa-solid fa-box-archive"></i>
+              </div>
+              <div class="icon" title="Delete" onclick="deleteListItem(this)">
+                <i class="fa-solid fa-trash"></i>
+              </div>
+              <div class="icon" title="Mark as read">
+                <i class="fa-regular fa-envelope"></i>
+              </div>
+              <div class="icon" title="Snooz">
+                <i class="fa-regular fa-clock"></i>
+              </div>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" name="" class="select" />
+            <div class="star">
+              <input type="checkbox" name="" class="stared" />
+              <i class="fa-regular fa-star"></i>
+            </div>
+            <div class="sender">Etsy</div>
+            <div class="msg">
+              <span>Lorem ipsum dolor - </span>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod
+            </div>
+            <div class="time">6:35 PM</div>
+            <div class="option">
+              <div class="icon" title="Archive">
+                <i class="fa-solid fa-box-archive"></i>
+              </div>
+              <div class="icon" title="Delete" onclick="deleteListItem(this)">
+                <i class="fa-solid fa-trash"></i>
+              </div>
+              <div class="icon" title="Mark as read">
+                <i class="fa-regular fa-envelope"></i>
+              </div>
+              <div class="icon" title="Snooz">
+                <i class="fa-regular fa-clock"></i>
+              </div>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" name="" class="select" />
+            <div class="star">
+              <input type="checkbox" name="" class="stared" />
+              <i class="fa-regular fa-star"></i>
+            </div>
+            <div class="sender">Etsy</div>
+            <div class="msg">
+              <span>Lorem ipsum dolor - </span>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod
+            </div>
+            <div class="time">6:35 PM</div>
+            <div class="option">
+              <div class="icon" title="Archive">
+                <i class="fa-solid fa-box-archive"></i>
+              </div>
+              <div class="icon" title="Delete" onclick="deleteListItem(this)">
+                <i class="fa-solid fa-trash"></i>
+              </div>
+              <div class="icon" title="Mark as read">
+                <i class="fa-regular fa-envelope"></i>
+              </div>
+              <div class="icon" title="Snooz">
+                <i class="fa-regular fa-clock"></i>
+              </div>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" name="" class="select" />
+            <div class="star">
+              <input type="checkbox" name="" class="stared" />
+              <i class="fa-regular fa-star"></i>
+            </div>
+            <div class="sender">Etsy</div>
+            <div class="msg">
+              <span>Lorem ipsum dolor - </span>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod
+            </div>
+            <div class="time">6:35 PM</div>
+            <div class="option">
+              <div class="icon" title="Archive">
+                <i class="fa-solid fa-box-archive"></i>
+              </div>
+              <div class="icon" title="Delete" onclick="deleteListItem(this)">
+                <i class="fa-solid fa-trash"></i>
+              </div>
+              <div class="icon" title="Mark as read">
+                <i class="fa-regular fa-envelope"></i>
+              </div>
+              <div class="icon" title="Snooz">
+                <i class="fa-regular fa-clock"></i>
+              </div>
+            </div>
+          </li>
+          <li class="read">
+            <input type="checkbox" name="" class="select" />
+            <div class="star">
+              <input type="checkbox" name="" class="stared" />
+              <i class="fa-regular fa-star"></i>
+            </div>
+            <div class="sender">Etsy</div>
+            <div class="msg">
+              <span>Lorem ipsum dolor - </span>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod
+            </div>
+            <div class="time">6:35 PM</div>
+            <div class="option">
+              <div class="icon" title="Archive">
+                <i class="fa-solid fa-box-archive"></i>
+              </div>
+              <div class="icon" title="Delete" onclick="deleteListItem(this)">
+                <i class="fa-solid fa-trash"></i>
+              </div>
+              <div class="icon" title="Mark as read">
+                <i class="fa-regular fa-envelope"></i>
+              </div>
+              <div class="icon" title="Snooz">
+                <i class="fa-regular fa-clock"></i>
+              </div>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" name="" class="select" />
+            <div class="star">
+              <input type="checkbox" name="" class="stared" />
+              <i class="fa-regular fa-star"></i>
+            </div>
+            <div class="sender">Etsy</div>
+            <div class="msg">
+              <span>Lorem ipsum dolor - </span>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod
+            </div>
+            <div class="time">6:35 PM</div>
+            <div class="option">
+              <div class="icon" title="Archive">
+                <i class="fa-solid fa-box-archive"></i>
+              </div>
+              <div class="icon" title="Delete" onclick="deleteListItem(this)">
+                <i class="fa-solid fa-trash"></i>
+              </div>
+              <div class="icon" title="Mark as read">
+                <i class="fa-regular fa-envelope"></i>
+              </div>
+              <div class="icon" title="Snooz">
+                <i class="fa-regular fa-clock"></i>
+              </div>
+            </div>
+          </li>
+          
+        </ul>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      let toggleBtn = document.querySelector(".toggleBtn");
+      let sideBar = document.querySelector(".sideBar");
+      let sidebarright = document.querySelector(".sidebarright");
+      let mails = document.querySelector(".mails");
+      settingsicon.onclick = function () {
+        sidebarright.classList.toggle("active");
+        mails.classList.toggle("right-add");
+      };
+
+      closebtn.onclick = function () {
+        sidebarright.classList.toggle("active");
+        mails.classList.toggle("right-add");
+      };
+
+      toggleBtn.onclick = function () {
+        sideBar.classList.toggle("active");
+        mails.classList.toggle("left-add");
+      };
+      let selector = document.querySelector(".mainSelect");
+      let select = document.querySelectorAll(".select");
+      selector.addEventListener("click", function (e) {
+        if ((e = selector.checked)) {
+          select.forEach(function (c) {
+            c.checked = true;
+          });
+        } else {
+          select.forEach(function (c) {
+            c.checked = false;
+          });
+        }
+      });
+
+      function changeTab(index) {
+    
+    var tabs = document.getElementsByClassName("tab");
+    var senders = document.getElementsByClassName("sender");
+    let mailnames = ["Etsy","Amazon","Facebook"];
+    for (var i = 0; i < tabs.length; i++) {
+      tabs[i].classList.remove("active");
+    } 
+    tabs[index].classList.add("active");
+    for(var i=0;i<senders.length;i++){
+      document.getElementsByClassName("sender")[i].innerHTML = mailnames[index];
+    }
+    
+  }
+
+  function deleteListItem(deleteIcon) {
+    var listItem = deleteIcon.closest('li');
+    listItem.remove();
+  }
+    
+    </script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+      }
+      body {
+        min-height: 100vh;
+        background: #f6f8fc;
+        padding: 60px 20px 20px 80px;
+      }
+
+      .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 60px;
+        padding: 0 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .header .left {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+      .header .left .toggleBtn {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 48px;
+        height: 48px;
+        cursor: pointer;
+        font-size: 1.2em;
+        border-radius: 50%;
+      }
+      .header .left .toggleBtn:hover {
+        background: rgba(0, 0, 0, 0.15);
+      }
+      .header .middle .searchBx {
+        position: relative;
+        height: 48px;
+        width: 600px;
+        display: flex;
+        align-items: center;
+        border-radius: 5px;
+        background: #eaf1fb;
+        transform: translateX(-110px);
+      }
+      .header .middle .searchBx i {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 48px;
+        height: 48px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2em;
+        cursor: pointer;
+        z-index: 2;
+      }
+      .header .middle .searchBx i.fa-sliders {
+        left: 100%;
+        transform: translateX(-110%);
+      }
+      .header .middle .searchBx .serach {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        outline: none;
+        border: none;
+        border-radius: 5px;
+        background: #eaf1fb;
+        padding-left: 50px;
+        font-size: 1.2em;
+      }
+      .header .middle .searchBx .serach:focus {
+        background: #fff;
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+      }
+      .header .right .option {
+        position: relative;
+        display: flex;
+        gap: 5px;
+      }
+      .header .right .option i,
+      .header .right .option .user {
+        position: relative;
+        width: 48px;
+        height: 48px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2em;
+        cursor: pointer;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+      .header .right .option i:hover,
+      .header .right .option .user:hover {
+        background: rgba(0, 0, 0, 0.05);
+      }
+      .header .right .option .user img {
+        position: relative;
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+
+      .sidebarright {
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        align-items: center;
+        right: 0;
+        top: 60px;
+        background: #fff;
+        width: 0px;
+
+        padding: 10px 0;
+        overflow: hidden;
+        z-index: 3;
+        transition: 0.5s;
+        border-radius: 8px;
+
+        font-family: "Google Sans", Roboto, RobotoDraft, Helvetica, Arial,
+          sans-serif;
+        color: #202124;
+        flex-shrink: 0;
+      }
+
+      .sidebarright.active {
+        align-items: flex-start;
+        min-width: 372px;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .mails.right-add {
+        padding-right: 372px;
+      }
+      .mails.left-add {
+        padding-left: 190px;
+      }
+
+      .quick-settings {
+        -webkit-font-smoothing: antialiased;
+        font-family: "Google Sans", Roboto, RobotoDraft, Helvetica, Arial,
+          sans-serif;
+        font-size: 1rem;
+        letter-spacing: normal;
+        color: #202124;
+        margin: 16px 16px 0;
+        width: 300px;
+      }
+
+      .quick-settings-header {
+        font-size: 16px;
+        font-weight: bold;
+      }
+
+      .close-btn {
+        align-items: center;
+        border: none;
+        justify-content: center;
+        position: relative;
+        z-index: 0;
+        -webkit-font-smoothing: antialiased;
+        font-family: "Google Sans", Roboto, RobotoDraft, Helvetica, Arial,
+          sans-serif;
+        font-size: 0.875rem;
+        letter-spacing: normal;
+        background: none;
+        border-radius: 4px;
+        box-sizing: border-box;
+        color: #444746;
+        font-weight: 500;
+        outline: none;
+        background-image: url("https://www.gstatic.com/images/icons/material/system_gm/1x/close_black_20dp.png");
+
+        background-repeat: no-repeat;
+        background-size: 20px;
+        cursor: pointer;
+        display: inline-block;
+        height: 20px;
+        margin: 16px;
+        width: 20px;
+        opacity: 0.71;
+        padding: 0;
+        margin-left: 140px;
+      }
+
+      .see-all-btn {
+        align-items: center;
+        border: none;
+        display: inline-flex;
+        justify-content: center;
+        position: relative;
+        z-index: 0;
+        -webkit-font-smoothing: antialiased;
+        font-family: "Google Sans", Roboto, RobotoDraft, Helvetica, Arial,
+          sans-serif;
+        font-size: 0.875rem;
+        letter-spacing: normal;
+        background: none;
+        cursor: pointer;
+        font-weight: 500;
+        height: 36px;
+        min-width: 80px;
+        outline: none;
+        padding: 0 16px;
+        box-sizing: border-box;
+        color: #1a73e8;
+        margin: 0 16px 16px;
+        width: 100%;
+        border-radius: 99999px;
+        box-shadow: inset 0 0 0 1px #e5e5e5;
+      }
+
+      .app-settings {
+        font-family: "Google Sans", Roboto, RobotoDraft, Helvetica, Arial,
+          sans-serif;
+        color: #202124;
+        border-top: 1px solid #e5e5e5;
+      }
+
+      .app-settings-header {
+        -webkit-font-smoothing: antialiased;
+        font-family: "Google Sans", Roboto, RobotoDraft, Helvetica, Arial,
+          sans-serif;
+        font-weight: 500;
+        margin: 16px;
+        text-transform: revert;
+        color: #444746;
+        font-size: 0.75rem;
+        letter-spacing: 0.00834em;
+      }
+
+      .app-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+        width: 300px;
+      }
+
+      .app-name {
+        -webkit-font-smoothing: antialiased;
+        font-family: "Google Sans", Roboto, RobotoDraft, Helvetica, Arial,
+          sans-serif;
+        font-size: 0.875rem;
+        letter-spacing: normal;
+        color: #202124;
+        line-height: 20px;
+        margin-bottom: 4px;
+        width: 300px;
+        margin-left: 10px;
+      }
+
+      .customize-btn {
+        align-items: center;
+        border: none;
+        position: relative;
+        z-index: 0;
+        background: none;
+        box-sizing: border-box;
+        outline: none;
+        -webkit-font-smoothing: antialiased;
+        font-family: "Google Sans", Roboto, RobotoDraft, Helvetica, Arial,
+          sans-serif;
+        font-size: 0.875rem;
+        letter-spacing: normal;
+        color: #1a73e8;
+        cursor: pointer;
+        display: inline-block;
+        font-weight: 500;
+        height: inherit;
+        justify-content: inherit;
+        line-height: 24px;
+        width: 300px;
+        padding: 0 12px;
+        margin-left: 91px;
+        border-radius: 99999px;
+      }
+
+      .display-settings {
+        font-family: "Google Sans", Roboto, RobotoDraft, Helvetica, Arial,
+          sans-serif;
+        color: #202124;
+        border-top: 1px solid #e5e5e5;
+        width: 300px;
+      }
+
+      .display-settings-header {
+        -webkit-font-smoothing: antialiased;
+        font-family: "Google Sans", Roboto, RobotoDraft, Helvetica, Arial,
+          sans-serif;
+        font-weight: 500;
+        margin: 16px;
+        text-transform: revert;
+        color: #444746;
+        font-size: 0.75rem;
+        letter-spacing: 0.00834em;
+        width: 300px;
+      }
+
+      .density-option {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 10px;
+        cursor: pointer;
+        width: 300px;
+      }
+
+      .density-radio {
+        display: true;
+        margin-left: 20px;
+      }
+
+      .density-text {
+        align-self: center;
+        display: inline;
+        -webkit-box-flex: 2;
+        flex-grow: 2;
+        max-width: 136px;
+        -webkit-font-smoothing: antialiased;
+        font-family: "Google Sans", Roboto, RobotoDraft, Helvetica, Arial,
+          sans-serif;
+        font-size: 0.875rem;
+        letter-spacing: normal;
+        color: #202124;
+        margin-left: 10px;
+      }
+
+      .density-option:hover .density-text {
+        text-decoration: underline;
+      }
+
+      .density-radio:checked + .density-text {
+        font-weight: bold;
+      }
+
+      .theme-settings {
+        padding: 20px;
+        border-top: 1px solid #e5e5e5;
+      }
+
+      .theme-settings-header {
+        -webkit-font-smoothing: antialiased;
+        font-family: "Google Sans", Roboto, RobotoDraft, Helvetica, Arial,
+          sans-serif;
+        font-weight: 500;
+        line-height: 20px;
+        text-transform: revert;
+        color: #444746;
+        font-size: 0.75rem;
+        letter-spacing: 0.00834em;
+      }
+
+      .view-all-btn {
+        align-items: center;
+        border: none;
+        position: relative;
+        z-index: 0;
+        background: none;
+        box-sizing: border-box;
+        outline: none;
+        -webkit-font-smoothing: antialiased;
+        font-family: "Google Sans", Roboto, RobotoDraft, Helvetica, Arial,
+          sans-serif;
+        font-size: 0.875rem;
+        letter-spacing: normal;
+        color: #1a73e8;
+        cursor: pointer;
+        display: inline-block;
+        font-weight: 500;
+        height: inherit;
+        justify-content: inherit;
+        line-height: 24px;
+        min-width: 0;
+        padding: 0 12px;
+        border-radius: 99999px;
+        margin-left: 170px;
+      }
+
+      .theme-item {
+        display: flex;
+        margin-left: 10px;
+
+        margin-bottom: 10px;
+      }
+
+      .theme-preview {
+        font-family: "Google Sans", Roboto, RobotoDraft, Helvetica, Arial,
+          sans-serif;
+        color: #202124;
+        border-radius: 4px;
+        cursor: pointer;
+        height: 40px;
+        margin-top: 8px;
+        width: 58px;
+        box-sizing: border-box;
+        border: 2px solid #1a73e8;
+      }
+
+      .theme-preview:hover {
+        border: 2px solid #1a73e8;
+      }
+
+      .inbox-settings {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border-top: 1px solid #e5e5e5;
+        width: 100%;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+      }
+
+      .inbox-settings-header {
+        -webkit-font-smoothing: antialiased;
+        font-family: "Google Sans", Roboto, RobotoDraft, Helvetica, Arial,
+          sans-serif;
+        font-weight: 500;
+        margin: 16px;
+        text-transform: revert;
+        color: #444746;
+        font-size: 0.75rem;
+        letter-spacing: 0.00834em;
+      }
+
+      .inbox-option {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-top: 10px;
+        cursor: pointer;
+      }
+
+      .inbox-radio {
+        margin-right: 5px;
+        appearance: none;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 2px solid #dadce0;
+        outline: none;
+        transition: all 0.3s ease;
+      }
+
+      .inbox-radio:checked {
+        border-color: #1a73e8;
+        background-color: #1a73e8;
+      }
+
+      .inbox-label {
+        -webkit-font-smoothing: antialiased;
+        font-family: "Google Sans", Roboto, RobotoDraft, Helvetica, Arial,
+          sans-serif;
+        font-size: 0.875rem;
+        letter-spacing: normal;
+        color: #202124;
+      }
+
+      .sideBar {
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        align-items: center;
+        left: 0;
+        top: 60px;
+        background: #f6f8fc;
+        width: 80px;
+        height: 100%;
+        padding: 10px 0;
+        overflow: hidden;
+        z-index: 3;
+        transition: 0.5s;
+      }
+      .sideBar.active {
+        align-items: flex-start;
+        width: 250px;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+      }
+      .sideBar .newmail {
+        position: relative;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        background: #c2e7ff;
+        border-radius: 15px;
+        cursor: pointer;
+      }
+      .sideBar .newmail:hover {
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+      }
+      .sideBar.active .newmail {
+        width: 150px;
+        margin-left: 10px;
+      }
+      .sideBar .newmail i {
+        font-size: 1.5em;
+      }
+      .sideBar .newmail span {
+        display: none;
+      }
+      .sideBar.active .newmail span {
+        display: inline-block;
+      }
+      .sideBar .menu {
+        list-style: none;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        align-items: center;
+        padding-top: 20px;
+      }
+      .sideBar.active .menu {
+        align-items: flex-start;
+        gap: 0;
+      }
+      .sideBar .menu li {
+        position: relative;
+        width: 35px;
+        height: 35px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 30px;
+        cursor: pointer;
+      }
+      .sideBar.active .menu li {
+        width: calc(100% - 20px);
+        border-radius: 0 20px 20px 0;
+        justify-content: flex-start;
+        gap: 20px;
+        padding-left: 35px;
+      }
+      .sideBar .menu li.active {
+        background: #c2e7ff;
+      }
+      .sideBar .menu li.active::before {
+        content: "";
+        top: 0;
+        right: 0;
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: rgba(255, 0, 0, 0.75);
+      }
+      .sideBar.active .menu li.active::before {
+        content: "1,764";
+        background: transparent;
+        top: 50%;
+        right: 50px;
+        transform: translateY(-60%);
+        font-size: 0.91em;
+        font-weight: 600;
+        color: #0256ff;
+      }
+      .sideBar .menu li.last {
+        margin-top: 25px;
+      }
+      .sideBar .menu li:hover:not(.active) {
+        background: rgba(0, 0, 0, 0.1);
+      }
+      .sideBar .menu li span {
+        display: none;
+      }
+      .sideBar.active .menu li span {
+        display: inline-block;
+      }
+
+      .mails {
+        position: relative;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background: #fff;
+        border-radius: 10px;
+        overflow: auto;
+      }
+      .mails .top {
+        position: relative;
+        padding: 5px 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 50px;
+      }
+      .mails .top .left {
+        display: flex;
+        gap: 5px;
+      }
+      .mails .top .left .select {
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+      }
+      .mails .top .left .select input {
+        width: 20px;
+        height: 20px;
+      }
+      .mails .top .left .other {
+        display: flex;
+      }
+      .mails .top .left .other i {
+        position: relative;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        border-radius: 50%;
+        transition: 0.5s;
+      }
+      .mails .top .left .other i:hover {
+        background: #eee;
+      }
+      .top .right {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+      .top .right .show {
+        padding: 8px 5px;
+        border-radius: 8px;
+        transition: 0.5s;
+        font-size: 14px;
+        cursor: pointer;
+      }
+      .top .right .show:hover {
+        background: #eee;
+      }
+      .mails .top .right i {
+        position: relative;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        border-radius: 50%;
+        transition: 0.5s;
+      }
+      .mails .top .right i:hover {
+        background: #eee;
+      }
+      .tabs {
+        position: relative;
+        display: flex;
+        margin-top: 10px;
+        padding-left: 10px;
+        border-bottom: 1px solid #bbb;
+      }
+      .tabs .tab {
+        position: relative;
+        display: flex;
+        width: 250px;
+        height: 56px;
+        align-items: center;
+        gap: 5px;
+        background: #fff;
+        cursor: pointer;
+      }
+      .tabs .tab:hover {
+        background: #eee;
+      }
+      .tabs .tab.active {
+        color: #00f;
+      }
+      .tabs .tab.active::before {
+        content: "";
+        position: absolute;
+        width: 220px;
+        height: 3px;
+        background: #00f;
+        bottom: -1.5px;
+        left: 0;
+        border-radius: 3px;
+      }
+      .tabs .tab .icon {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+      }
+      .mail {
+        position: relative;
+      }
+      .mail .list {
+        list-style: none;
+      }
+      .mail .list li {
+        position: relative;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        padding: 0 10px;
+        cursor: pointer;
+        border-bottom: 1px solid #bbb;
+        background: #fff;
+      }
+      .mail .list li.read {
+        background: #f6f8fc;
+      }
+      .mail .list li:hover {
+        box-shadow: 2px 2px 5px #333;
+        z-index: 2;
+      }
+      .mail .list li .star {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30px;
+        height: 30px;
+        padding: 0 25px;
+        color: #eee;
+      }
+      .mail .list li .star .stared {
+        position: absolute;
+        appearance: none;
+        width: 30px;
+        height: 30px;
+      }
+      .mail .list li .star .stared:checked ~ i {
+        color: #0f0;
+      }
+      .mail .list li .sender {
+        min-width: 160px;
+        font-weight: 600;
+      }
+      .mail .list li.read .sender {
+        font-weight: 100;
+      }
+      .mail .list li .msg {
+        flex-grow: 1;
+        color: #aaa;
+      }
+      .mail .list li .msg span {
+        font-weight: 600;
+        color: #333;
+      }
+      .mail .list li.read .msg span {
+        font-weight: 100;
+      }
+      .mail .list li .time {
+        font-weight: 600;
+        font-size: 0.85em;
+      }
+      .mail .list li.read .time {
+        font-weight: 100;
+      }
+      .mail .list li .option {
+        position: absolute;
+        display: none;
+        right: 0;
+        z-index: 3;
+        background: #fff;
+      }
+      .mail .list li.read .option {
+        background: #f6f8fc;
+      }
+      .mail .list li:hover .option {
+        display: flex;
+      }
+      .option .icon {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2px;
+        border-radius: 50%;
+        width: 38px;
+        height: 38px;
+      }
+      .option .icon:hover {
+        background: #eee;
+      }
+      .mail .list li:has(.select:checked),
+      .mail .list li .select:checked ~ .option {
+        background: #c2dbff;
+      }
+    </style>
+  </body>
+</html>
